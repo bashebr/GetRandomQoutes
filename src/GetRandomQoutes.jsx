@@ -6,15 +6,16 @@ export default function GetRandomQuotes({url}) {
     const [quotes, setQuotes] = useState({});
   
     useEffect(() => {
-      getQoute()
-    }, [])
+      getQuote()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []) 
   
-    const getQoute = () => {
+    const getQuote = () => {
       fetch(url)
       .then(res => res.json())
       .then(data => setQuotes(data))
     }
-    const getNewQuote = () => getQoute();
+    const getNewQuote = () => getQuote();
 
     const tweetQuote = () => {
       const twitterUrl = `https://twitter.com/intent/tweet?text=${quotes.content} - ${quotes.author}`;
@@ -23,10 +24,14 @@ export default function GetRandomQuotes({url}) {
   
     const { content, author } = quotes;
     return (
-        <div className="box-centerside">
-        <div className="text">
-          <p>{content}</p>
-        </div>
+        <>
+        <header className='header'>
+          <h1>Quotes of the Day</h1>
+        </header>
+        <div className="box-centered">
+          <div className="text">
+            <p>{content}</p>
+          </div>
         <div className="author">
           <h5>{author}</h5>
           <div className="button-container">
@@ -37,5 +42,6 @@ export default function GetRandomQuotes({url}) {
           </div>
         </div>
       </div>
+      </>
     )
   }
