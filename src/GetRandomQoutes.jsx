@@ -19,7 +19,7 @@ export default function GetRandomQuotes({url}) {
 
     const tweetQuote = () => {
       const twitterUrl = `https://twitter.com/intent/tweet?text=${quotes.content} - ${quotes.author}`;
-      window.open(twitterUrl, "_blank");
+      window.open(twitterUrl, "_blank", '__noreferrer');
     };
   
     const { content, author } = quotes;

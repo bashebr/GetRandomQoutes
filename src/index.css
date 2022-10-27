@@ -111,12 +111,13 @@ header {
   background-color: #e4c0c0;
 }
 h1 {
-  font-size: 50px;
+  font-size: 40px;
   background: -webkit-linear-gradient(rgb(241, 40, 77), rgb(51, 51, 51));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
 
 @media only screen and (max-width: 450px) {
@@ -130,6 +131,9 @@ h1 {
     font-size:15px;
   }
   .header h1{
-    font-size: 35px;
+    font-size: 30px;
+  }
+  button {
+    font-size:small;
   }
 }
